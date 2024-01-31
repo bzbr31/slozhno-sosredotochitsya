@@ -16,7 +16,7 @@
 
 .header {
   position: relative;
-  block-size: max(668px, 100vb);
+  min-block-size: 668px;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   padding: 10px;
@@ -191,6 +191,8 @@
 .content__card-title {
   color: var(--accent-text-color, #000028);
   font-weight: var(--bold-font-weight, 700);
+  font-size: var(--main-font-size, 1.125rem);
+  line-height: 130%;
 }
 
 .content__card-description {
@@ -260,7 +262,7 @@
 .footer {
   position: relative;
   display: flex;
-  block-size: max(668px, 100vb);
+  min-block-size: 668px;
   justify-content: center;
   align-items: center;
   padding: 10px;
@@ -268,8 +270,12 @@
 
 @media (width >= 768px) {
   .header {
-    block-size: max(1024px, 100vb);
+    min-block-size: 1024px;
     padding: 20px;
+  }
+
+  .header__title {
+    margin-inline-start: -1rem;
   }
 
   .header__title,
@@ -358,16 +364,25 @@
     grid-row: 3 / 4;
     grid-column: 2 / 4;
   }
+
+  .footer {
+    min-block-size: 1024px;
+    padding: 20px;
+  }
 }
 
 @media (width >= 1024px) {
   .header {
-    block-size: max(768px, 100vb);
+    min-block-size: 768px;
   }
 
   .section-what .content-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+  }
+
+  .footer {
+    min-block-size: 768px;
   }
 }
