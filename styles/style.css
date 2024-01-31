@@ -325,13 +325,10 @@
     gap: 20px;
   }
 
-<<<<<<< HEAD
   .section-images {
     gap: 20px;
   }
 
-=======
->>>>>>> 8d1e9c6d6b43e828b1e2cc37f228c0d28e390721
   .content__image-list {
     display: grid;
     grid-template-columns: repeat(3, auto-fit);
