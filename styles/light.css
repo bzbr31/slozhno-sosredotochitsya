@@ -3,8 +3,52 @@
   Здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
+:root .theme_light {
+  --main-font-family: "IBM Plex mono", monospace;
+  --main-font-size: 18px;
+  --regular-font-weight: 400;
+  --bold-font-weight: 700;
 
-.page.theme_light {
+  --main-title-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+
+  --main-title-color: #ffc2e6;
+  --main-text-color: #353430;
+  --accent-text-color: #353430;
+  --accent-color: #353430;
+  --accent-bg-color: #ff8dcb;
+  --accent-link-color: #f1b2ce;
+  --bg-color: #ff8dcb;
+
+  --bg-image: url(../images/cover-image-light.png);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --main-font-family: "IBM Plex mono", monospace;
+    --main-font-size: 18px;
+    --regular-font-weight: 400;
+    --bold-font-weight: 700;
+
+    --main-title-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+
+    --main-title-color: #ffc2e6;
+    --main-text-color: #353430;
+    --accent-text-color: #353430;
+    --accent-color: #353430;
+    --accent-bg-color: #ff8dcb;
+    --accent-link-color: #f1b2ce;
+    --bg-color: #ff8dcb;
+
+    --bg-image: url(../images/cover-image-light.png);
+  }
+
+  .decorated-element {
+    display: none;
+  }
+}
+
+.page.theme_light .decorated-element {
+  display: none;
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
