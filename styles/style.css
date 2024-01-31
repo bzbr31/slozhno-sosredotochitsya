@@ -3,7 +3,7 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   inline-size: 100%;
-  background-color: var(--bg-color);
+  background-color: var(--bg-color, #000028);
   background-image: var(--bg-image, url(../images/cover-image-dark.png));
   background-repeat: no-repeat;
   background-position: center;
@@ -16,7 +16,7 @@
 
 .header {
   position: relative;
-  min-block-size: 668px;
+  block-size: min(668px, 100vb);
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   padding: 10px;
@@ -99,7 +99,8 @@
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid var(--accent-color, #ff0070);
+  cursor: pointer;
+  outline: 1px solid var(--hover-outline-color, rgba(255, 0, 112, 0.4));
 }
 
 .header__theme-menu-button:focus {
@@ -111,8 +112,7 @@
   text-underline-position: under;
 }
 
-.header__title,
-.footer__title {
+.page-title {
   font-family: inherit;
   color: var(--main-title-color, #db00ff);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
@@ -262,7 +262,7 @@
 .footer {
   position: relative;
   display: flex;
-  min-block-size: 668px;
+  block-size: min(668px, 100vb);
   justify-content: center;
   align-items: center;
   padding: 10px;
@@ -270,7 +270,7 @@
 
 @media (width >= 768px) {
   .header {
-    min-block-size: 1024px;
+    block-size: max(1024px, 100vb);
     padding: 20px;
   }
 
@@ -278,8 +278,7 @@
     margin-inline-start: -1rem;
   }
 
-  .header__title,
-  .footer__title {
+  .page-title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
@@ -366,14 +365,14 @@
   }
 
   .footer {
-    min-block-size: 1024px;
+    block-size: max(1024px, 100vb);
     padding: 20px;
   }
 }
 
 @media (width >= 1024px) {
   .header {
-    min-block-size: 768px;
+    block-size: max(768px, 100vb);
   }
 
   .header__theme-menu {
@@ -392,6 +391,6 @@
   }
 
   .footer {
-    min-block-size: 768px;
+    block-size: max(768px, 100vb);
   }
 }

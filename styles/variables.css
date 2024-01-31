@@ -16,6 +16,7 @@
   --accent-bg-color: #ff0070;
   --accent-link-color: #ff0070;
 
+  --hover-outline-color: rgba(255, 0, 112, 0.4);
   --bg-color: #000028;
   --bg-image: url(../images/cover-image-dark.png);
 }
