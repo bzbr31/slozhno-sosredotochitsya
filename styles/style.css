@@ -1,7 +1,4 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   inline-size: 100%;
   background-color: var(--bg-color, #000028);
   background-image: var(--bg-image, url(../images/cover-image-dark.png));
@@ -16,9 +13,9 @@
 
 .header {
   position: relative;
-  block-size: min(668px, 100vb);
+  block-size: max(100vb, 668px);
   display: grid;
-  grid-template-rows: 1fr min-content 1fr;
+  grid-template-rows: 1fr minmax(min-content, max-content) 1fr;
   padding: 10px;
 }
 
@@ -90,7 +87,7 @@
   text-align: center;
   font-weight: var(--regular-font-weight, 400);
   line-height: 100%;
-  padding: 2px 13px;
+  padding: 0 12px 6px;
 }
 
 .header__theme-menu-button_active {
@@ -248,6 +245,7 @@
 
 .image-list-item {
   inline-size: 100%;
+  block-size: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -270,7 +268,7 @@
 
 @media (width >= 768px) {
   .header {
-    block-size: max(1024px, 100vb);
+    block-size: max(100vb, 1024px);
     padding: 20px;
   }
 
@@ -372,7 +370,7 @@
 
 @media (width >= 1024px) {
   .header {
-    block-size: max(768px, 100vb);
+    block-size: max(100vb, 768px);
   }
 
   .header__theme-menu {
